@@ -10,7 +10,13 @@ import com.digdes.school.type.DoubleDataType;
 import com.digdes.school.type.LongDataType;
 import com.digdes.school.type.StringDataType;
 
-import java.util.*;
+import java.util.AbstractMap;
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
 import java.util.function.Predicate;
 
 public final class TableUtils {
@@ -52,8 +58,8 @@ public final class TableUtils {
             if (columnName.equalsIgnoreCase(StringUtils.prepareString(leftOperand.value()))) {
                 resultColumnName = columnName;
                 DataType<?> dataType = COLUMN_TO_TYPE.get(columnName);
-                if (dataType.isCorrectValue(leftOperand.value())) {
-                    resultObject = dataType.convertToDataType(leftOperand.value());
+                if (dataType.isCorrectValue(rightOperand.value())) {
+                    resultObject = dataType.convertToDataType(rightOperand.value());
                 } else {
                     throw new ValidationException("Incompatible types.");
                 }
@@ -63,7 +69,6 @@ public final class TableUtils {
         if (resultColumnName == null) {
             throw new ValidationException("Validation error.");
         }
-
         return new AbstractMap.SimpleEntry<>(resultColumnName, resultObject);
     }
 
@@ -96,31 +101,36 @@ public final class TableUtils {
     }
 
     public static Predicate<Map<String, Object>> predicateOfMultipleConditions(Deque<LexemeEntity> conditionsInReverseOrder) throws ValidationException {
+        System.out.println(conditionsInReverseOrder);
         Iterator<LexemeEntity> conditionsInOrder = conditionsInReverseOrder.descendingIterator();
         Deque<Predicate<Map<String, Object>>> conditions = new ArrayDeque<>();
 
-        while(conditionsInOrder.hasNext()) {
+        while (conditionsInOrder.hasNext()) {
             LexemeEntity current = conditionsInOrder.next();
-
-            if(current.type() == LexemeType.STRING_TYPE) {
+           // System.out.println(current);
+            if (current.type() == LexemeType.STRING_TYPE) {
                 LexemeEntity operation = conditionsInOrder.next();
                 LexemeEntity rightOperand = conditionsInOrder.next();
+//                System.out.println("current = " + current);
+//                System.out.println("operation = " + operation);
+//                System.out.println("rightOperand = " + rightOperand);
                 Predicate<Map<String, Object>> stringPredicateEntry =
                         TableUtils.prepareMultipleOperationEntry(current, operation, rightOperand);
 
                 conditions.push(stringPredicateEntry);
             }
-            if(current.type() == LexemeType.LOGIC_OPERATION_TYPE) {
+            if (current.type() == LexemeType.LOGIC_OPERATION_TYPE) {
                 Predicate<Map<String, Object>> secondPredicate = conditions.poll();
                 Predicate<Map<String, Object>> firstPredicate = conditions.poll();
 
-                if("AND".equalsIgnoreCase(current.value())) {
+                if ("AND".equalsIgnoreCase(current.value())) {
                     conditions.push(firstPredicate.and(secondPredicate));
                 }
                 if ("OR".equalsIgnoreCase(current.value())) {
                     conditions.push(firstPredicate.or(secondPredicate));
                 }
             }
+
         }
         return conditions.poll();
     }

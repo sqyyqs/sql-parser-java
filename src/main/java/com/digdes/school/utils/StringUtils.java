@@ -5,10 +5,10 @@ public final class StringUtils {
     }
 
     public static String prepareString(String value) {
-        if(value == null) {
+        if (value == null) {
             return null;
         }
-        if(value.startsWith("'") && value.endsWith("'")) {
+        if (value.startsWith("'") && value.endsWith("'")) {
             return value.substring(1, value.length() - 1);
         }
         return value;

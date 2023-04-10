@@ -38,7 +38,7 @@ public final class StackUtils {
                 } else {
                     while (!operators.isEmpty() && operators.peek().type() != LexemeType.OPENING_PARENTHESIS_TYPE &&
                             LOGICAL_OPERATION_PRIORITY.get(LogicalOperation.of(operators.peek().value())) >
-                            LOGICAL_OPERATION_PRIORITY.get(LogicalOperation.of(lexeme.value()))) {
+                                    LOGICAL_OPERATION_PRIORITY.get(LogicalOperation.of(lexeme.value()))) {
                         result.push(operators.poll());
                     }
                     operators.push(lexeme);

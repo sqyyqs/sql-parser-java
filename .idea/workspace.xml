@@ -4,42 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11fdd8e1-b9f2-4a79-997a-afff21c5deae" name="Changes" comment="SelectQuery and some of QueryUtils">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/JavaSchoolStarter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/domain/ConditionStack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/domain/LexemeEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/domain/Query.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/domain/SelectQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/exception/ValidationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/operation/CommonOperation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/operation/LexemeType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/operation/LogicalOperation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/operation/Operation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/type/BooleanDataType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/type/DataType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/type/DoubleDataType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/type/LongDataType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/type/StringDataType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/utils/LexemeUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/utils/NumberUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/utils/OperationUtils.java" afterDir="false" />
+    <list default="true" id="11fdd8e1-b9f2-4a79-997a-afff21c5deae" name="Changes" comment="INSERT AND SELECT queries">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/domain/DeleteQuery.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/domain/UpdateQuery.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/utils/QueryUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/utils/StackUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/utils/StringUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/utils/TableUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/digdes/school/SimpleTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/digdes/school/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/digdes/school/queries/Condition.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/digdes/school/queries/DeleteQuery.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/digdes/school/queries/InsertQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/domain/InsertQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/digdes/school/queries/Query.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/digdes/school/queries/QueryUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/digdes/school/queries/SelectQuery.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/digdes/school/queries/UpdateQuery.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/digdes/school/JavaSchoolStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/JavaSchoolStarter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/digdes/school/domain/SelectQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/domain/SelectQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/digdes/school/utils/StackUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/utils/StackUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/digdes/school/utils/StringUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/utils/StringUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/digdes/school/utils/TableUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/utils/TableUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,26 +45,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.sourceCode.Java",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="Application.Main">
+}]]></component>
+  <component name="RunManager" selected="Application.JavaSchoolStarter">
     <configuration name="JavaSchoolStarter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.digdes.school.JavaSchoolStarter" />
       <module name="school" />
@@ -144,8 +119,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.JavaSchoolStarter" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.SqlWithoutFrom" />
         <item itemvalue="Application.SqlProcessor" />
       </list>
@@ -175,8 +150,16 @@
       <workItem from="1680905272756" duration="15141000" />
       <workItem from="1680920794951" duration="33022000" />
       <workItem from="1681082093154" duration="9722000" />
-      <workItem from="1681142993824" duration="9654000" />
+      <workItem from="1681142993824" duration="16852000" />
     </task>
+    <task id="LOCAL-00001" summary="INSERT AND SELECT queries">
+      <created>1681153149887</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1681153149887</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,6 +178,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="SelectQuery and some of QueryUtils" />
-    <option name="LAST_COMMIT_MESSAGE" value="SelectQuery and some of QueryUtils" />
+    <MESSAGE value="INSERT AND SELECT queries" />
+    <option name="LAST_COMMIT_MESSAGE" value="INSERT AND SELECT queries" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
