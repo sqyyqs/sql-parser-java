@@ -16,6 +16,9 @@ public final class QueryUtils {
     }
 
     public static List<Map<String, Object>> evaluateRequest(String request, List<Map<String, Object>> table) throws ValidationException {
+        if(request == null) {
+            throw new ValidationException("Query can't be a null.");
+        }
         List<LexemeEntity> lexemes = LexemeUtils.processQueryToLexemes(request);
         if (lexemes.isEmpty()) {
             throw new ValidationException("Query is empty.");

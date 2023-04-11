@@ -32,7 +32,7 @@ public final class StackUtils {
             if (DATA_TYPES.contains(lexeme.type()) || (lexeme.type() == LexemeType.COMMON_OPERATION_TYPE)) {
                 result.push(lexeme);
             }
-            if (lexeme.type() == LexemeType.LOGIC_OPERATION_TYPE && !"where".equals(lexeme.value())) {
+            if (lexeme.type() == LexemeType.LOGICAL_OPERATION_TYPE && !"where".equals(lexeme.value())) {
                 if (operators.isEmpty()) {
                     operators.push(lexeme);
                 } else {

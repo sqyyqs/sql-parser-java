@@ -94,9 +94,10 @@ public final class TableUtils {
         Predicate<Object> predicate =
                 rightOperandDataType.getPredicateByCommonOperation(commonOperation, rightOperand.value());
 
-        return row -> row.values()
+        return row -> row.entrySet()
                 .stream()
-                .filter(value -> rightOperandDataType.isCorrectValue(value.toString()))
+                .filter(mapEntry -> mapEntry.getKey().equalsIgnoreCase(leftOperand.value()))
+                .map(Map.Entry::getValue)
                 .anyMatch(predicate);
     }
 
@@ -107,19 +108,15 @@ public final class TableUtils {
 
         while (conditionsInOrder.hasNext()) {
             LexemeEntity current = conditionsInOrder.next();
-           // System.out.println(current);
             if (current.type() == LexemeType.STRING_TYPE) {
                 LexemeEntity operation = conditionsInOrder.next();
                 LexemeEntity rightOperand = conditionsInOrder.next();
-//                System.out.println("current = " + current);
-//                System.out.println("operation = " + operation);
-//                System.out.println("rightOperand = " + rightOperand);
                 Predicate<Map<String, Object>> stringPredicateEntry =
                         TableUtils.prepareMultipleOperationEntry(current, operation, rightOperand);
 
                 conditions.push(stringPredicateEntry);
             }
-            if (current.type() == LexemeType.LOGIC_OPERATION_TYPE) {
+            if (current.type() == LexemeType.LOGICAL_OPERATION_TYPE) {
                 Predicate<Map<String, Object>> secondPredicate = conditions.poll();
                 Predicate<Map<String, Object>> firstPredicate = conditions.poll();
 
@@ -134,5 +131,4 @@ public final class TableUtils {
         }
         return conditions.poll();
     }
-
 }

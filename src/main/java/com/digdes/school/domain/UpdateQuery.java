@@ -16,7 +16,7 @@ public class UpdateQuery implements Query {
     @Override
     public List<Map<String, Object>> executeQuery(List<Map<String, Object>> table, List<LexemeEntity> lexemes) throws ValidationException {
         Map<String, Object> updatedValues = lexemeProcessing(lexemes);
-        List<LexemeEntity> conditionLexemes = lexemes.stream().dropWhile(lexeme -> !"where".equalsIgnoreCase(lexeme.value())).toList();
+        List<LexemeEntity> conditionLexemes = lexemes.stream().dropWhile(lexeme -> !"where".equals(lexeme.value())).toList();
         Predicate<Map<String, Object>> rowPredicate = row -> true;
         Deque<LexemeEntity> conditionLexemesInRPN = StackUtils.sortStationAlgorithm(conditionLexemes);
 
@@ -37,10 +37,10 @@ public class UpdateQuery implements Query {
     private static Map<String, Object> lexemeProcessing(List<LexemeEntity> lexemes) throws ValidationException {
         Map<String, Object> updatedValues = new HashMap<>();
 
-        for (int idx = 0; idx < lexemes.size(); idx += 4) {
+        for (int idx = 1; idx < lexemes.size(); idx += 4) {
             LexemeEntity lexeme = lexemes.get(idx);
-            if (idx > 0) {
-                if (lexeme.type() == LexemeType.LOGIC_OPERATION_TYPE) {
+            if (idx > 1) {
+                if (lexeme.type() == LexemeType.LOGICAL_OPERATION_TYPE) {
                     return updatedValues;
                 }
             }

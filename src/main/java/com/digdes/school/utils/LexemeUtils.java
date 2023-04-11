@@ -14,9 +14,9 @@ import java.util.Map;
 public final class LexemeUtils {
     private static final Map<String, LexemeType> QUERY_OPERATION_LEXEME_TYPE = Map.of(
             "select", LexemeType.SELECT_QUERY_TYPE,
-            "insert values", LexemeType.INSERT_QUERY_TYPE,
+            "insert", LexemeType.INSERT_QUERY_TYPE,
             "delete", LexemeType.DELETE_QUERY_TYPE,
-            "update values ", LexemeType.UPDATE_QUERY_TYPE
+            "update", LexemeType.UPDATE_QUERY_TYPE
     );
 
     private LexemeUtils() {
@@ -71,6 +71,11 @@ public final class LexemeUtils {
             return compareOperationToken;
         }
 
+        LexemeEntity valuesToken = extractValuesToken(query);
+        if(valuesToken != null) {
+            return valuesToken;
+        }
+
         LexemeEntity booleanToken = extractBooleanToken(query);
         if (booleanToken != null) {
             return booleanToken;
@@ -116,10 +121,17 @@ public final class LexemeUtils {
         return null;
     }
 
+    private static LexemeEntity extractValuesToken(String query) {
+        if (OperationUtils.queryStartWithOperation(query, "values")) {
+            return new LexemeEntity(LexemeType.VALUES_TYPE, "values");
+        }
+        return null;
+    }
+
     private static LexemeEntity extractLogicalToken(String query) {
         LogicalOperation logicalOperation = LogicalOperation.fromQuery(query);
         if (logicalOperation != null) {
-            return new LexemeEntity(LexemeType.LOGIC_OPERATION_TYPE, logicalOperation.getOperation().trim());
+            return new LexemeEntity(LexemeType.LOGICAL_OPERATION_TYPE, logicalOperation.getOperation().trim());
         }
         return null;
     }
@@ -186,6 +198,4 @@ public final class LexemeUtils {
         }
         return null;
     }
-
-
 }
