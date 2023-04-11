@@ -18,6 +18,10 @@ public class JavaSchoolStarter {
 
     public static void main(String[] args) throws Exception {
         JavaSchoolStarter jss = new JavaSchoolStarter();
-
+        System.out.println(jss.execute("insert values 'lastName' = null"));
+        System.out.println(jss.execute("insert values 'lastName' = null"));
+        System.out.println(jss.execute("insert values 'lastName' = null"));
+        System.out.println(jss.execute("update values 'lasTNAME' = 'dima'"));
+        System.out.println(jss.execute("select where 'lastName' ilike '%IMA'"));
     }
 }

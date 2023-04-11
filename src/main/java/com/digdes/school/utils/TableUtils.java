@@ -87,7 +87,7 @@ public final class TableUtils {
         DataType<?> rightOperandDataType = COLUMN_TO_TYPE.get(column);
 
         CommonOperation commonOperation = CommonOperation.of(operation.value());
-        if (rightOperandDataType.isSupportedOperation(commonOperation)) {
+        if (!rightOperandDataType.isSupportedOperation(commonOperation)) {
             throw new ValidationException("Incompatible types.");
         }
 

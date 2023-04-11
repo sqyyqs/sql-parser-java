@@ -7,7 +7,8 @@ import java.util.function.Predicate;
 
 public class BooleanDataType implements DataType<Boolean> {
     private static final Set<CommonOperation> SUPPORTED_OPERATIONS = Set.of(
-            CommonOperation.EQ, CommonOperation.NE);
+            CommonOperation.EQ, CommonOperation.NE
+    );
 
     @Override
     public boolean isCorrectValue(String value) {
@@ -27,7 +28,7 @@ public class BooleanDataType implements DataType<Boolean> {
 
     @Override
     public boolean isSupportedOperation(CommonOperation operation) {
-        return !SUPPORTED_OPERATIONS.contains(operation);
+        return SUPPORTED_OPERATIONS.contains(operation);
     }
 
     @Override

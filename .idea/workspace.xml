@@ -4,19 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11fdd8e1-b9f2-4a79-997a-afff21c5deae" name="Changes" comment="all queries">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/digdes/school/StackUtilsTest.java" afterDir="false" />
+    <list default="true" id="11fdd8e1-b9f2-4a79-997a-afff21c5deae" name="Changes" comment="all working">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/digdes/school/JavaSchoolStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/JavaSchoolStarter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/digdes/school/domain/InsertQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/domain/InsertQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/digdes/school/domain/UpdateQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/domain/UpdateQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/digdes/school/operation/CommonOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/operation/CommonOperation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/digdes/school/operation/LogicalOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/operation/LogicalOperation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/digdes/school/utils/LexemeUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/utils/LexemeUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/digdes/school/utils/OperationUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/utils/OperationUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/digdes/school/utils/QueryUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/utils/QueryUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/digdes/school/utils/TableUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/utils/TableUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/digdes/school/LexemeUtilsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/digdes/school/LexemeUtilsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/digdes/school/type/BooleanDataType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/type/BooleanDataType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/digdes/school/type/DoubleDataType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/type/DoubleDataType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/digdes/school/type/LongDataType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/type/LongDataType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/digdes/school/type/StringDataType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/digdes/school/type/StringDataType.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +189,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681165521230</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="all working">
+      <created>1681244472903</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1681244472903</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,22 +217,8 @@
     <MESSAGE value="SelectQuery and some of QueryUtils" />
     <MESSAGE value="INSERT AND SELECT queries" />
     <MESSAGE value="all queries" />
-    <option name="LAST_COMMIT_MESSAGE" value="all queries" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/digdes/school/JavaSchoolStarter.java</url>
-          <line>18</line>
-          <properties class="com.digdes.school.JavaSchoolStarter" method="main">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="all working" />
+    <option name="LAST_COMMIT_MESSAGE" value="all working" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

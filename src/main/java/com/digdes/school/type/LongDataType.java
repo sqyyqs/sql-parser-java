@@ -30,7 +30,7 @@ public class LongDataType implements DataType<Long> {
 
     @Override
     public boolean isSupportedOperation(CommonOperation operation) {
-        return !SUPPORTED_OPERATIONS.contains(operation);
+        return SUPPORTED_OPERATIONS.contains(operation);
     }
 
     @Override
@@ -52,7 +52,6 @@ public class LongDataType implements DataType<Long> {
                 return convertedObject <= converted;
             };
             case GTE -> object -> {
-                //System.out.println(object);
                 Long converted = convertToDataType(value);
                 Long convertedObject = convertToDataType(object.toString());
                 if (converted == null) {

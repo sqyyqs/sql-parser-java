@@ -9,7 +9,8 @@ import java.util.function.Predicate;
 public class DoubleDataType implements DataType<Double> {
     private static final Set<CommonOperation> SUPPORTED_OPERATIONS = Set.of(
             CommonOperation.EQ, CommonOperation.NE, CommonOperation.GTE,
-            CommonOperation.GT, CommonOperation.LTE, CommonOperation.LT);
+            CommonOperation.GT, CommonOperation.LTE, CommonOperation.LT
+    );
 
     @Override
     public boolean isCorrectValue(String value) {
@@ -29,7 +30,7 @@ public class DoubleDataType implements DataType<Double> {
 
     @Override
     public boolean isSupportedOperation(CommonOperation operation) {
-        return !SUPPORTED_OPERATIONS.contains(operation);
+        return SUPPORTED_OPERATIONS.contains(operation);
     }
 
     @Override

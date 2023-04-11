@@ -30,7 +30,7 @@ public class StringDataType implements DataType<String> {
 
     @Override
     public boolean isSupportedOperation(CommonOperation operation) {
-        return !SUPPORTED_OPERATIONS.contains(operation);
+        return SUPPORTED_OPERATIONS.contains(operation);
     }
 
     @Override
