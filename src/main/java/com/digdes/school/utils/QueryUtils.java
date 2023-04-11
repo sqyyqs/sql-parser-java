@@ -29,7 +29,7 @@ public final class QueryUtils {
             case SELECT_QUERY_TYPE -> query = new SelectQuery();
             case UPDATE_QUERY_TYPE -> query = new UpdateQuery();
             case DELETE_QUERY_TYPE -> query = new DeleteQuery();
-            default -> throw new ValidationException("Unknown query type.");
+            default -> throw new ValidationException("Unknown query type: " + lexemes.get(0).value());
         }
         return query.executeQuery(table, lexemes);
     }

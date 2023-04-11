@@ -27,7 +27,7 @@ public enum CommonOperation implements Operation {
     }
 
     public static CommonOperation fromQuery(String query) {
-        return getByFilter(operation -> OperationUtils.queryStartWithOperation(query, operation.getOperation()));
+        return getByFilter(operation -> OperationUtils.queryStartWithOperationIgnoreCase(query, operation.getOperation()));
     }
 
     public static CommonOperation of(String value) {

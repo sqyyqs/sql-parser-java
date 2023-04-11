@@ -23,7 +23,7 @@ public enum LogicalOperation implements Operation {
 
     public static LogicalOperation fromQuery(String query) {
         return Arrays.stream(values())
-                .filter(operation -> OperationUtils.queryStartWithOperation(query, operation.getOperation()))
+                .filter(operation -> OperationUtils.queryStartWithOperationIgnoreCase(query, operation.getOperation()))
                 .findFirst()
                 .orElse(null);
     }

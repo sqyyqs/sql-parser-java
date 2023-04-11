@@ -73,8 +73,8 @@ public final class TableUtils {
     }
 
 
-    public static Predicate<Map<String, Object>> prepareMultipleOperationEntry(LexemeEntity leftOperand, LexemeEntity operation,
-                                                                               LexemeEntity rightOperand) throws ValidationException {
+    public static Predicate<Map<String, Object>> prepareOperationEntry(LexemeEntity leftOperand, LexemeEntity operation,
+                                                                       LexemeEntity rightOperand) throws ValidationException {
         String column = COLUMN_TO_TYPE.keySet()
                 .stream()
                 .filter(columnName -> columnName.equalsIgnoreCase(StringUtils.prepareString(leftOperand.value())))
@@ -96,13 +96,15 @@ public final class TableUtils {
 
         return row -> row.entrySet()
                 .stream()
-                .filter(mapEntry -> mapEntry.getKey().equalsIgnoreCase(leftOperand.value()))
+                .filter(mapEntry -> mapEntry.getKey().equalsIgnoreCase(column))
                 .map(Map.Entry::getValue)
                 .anyMatch(predicate);
     }
 
-    public static Predicate<Map<String, Object>> predicateOfMultipleConditions(Deque<LexemeEntity> conditionsInReverseOrder) throws ValidationException {
-        System.out.println(conditionsInReverseOrder);
+    public static Predicate<Map<String, Object>> predicateOfConditions(Deque<LexemeEntity> conditionsInReverseOrder) throws ValidationException {
+        if(conditionsInReverseOrder.isEmpty()) {
+            return row -> true;
+        }
         Iterator<LexemeEntity> conditionsInOrder = conditionsInReverseOrder.descendingIterator();
         Deque<Predicate<Map<String, Object>>> conditions = new ArrayDeque<>();
 
@@ -112,7 +114,7 @@ public final class TableUtils {
                 LexemeEntity operation = conditionsInOrder.next();
                 LexemeEntity rightOperand = conditionsInOrder.next();
                 Predicate<Map<String, Object>> stringPredicateEntry =
-                        TableUtils.prepareMultipleOperationEntry(current, operation, rightOperand);
+                        TableUtils.prepareOperationEntry(current, operation, rightOperand);
 
                 conditions.push(stringPredicateEntry);
             }

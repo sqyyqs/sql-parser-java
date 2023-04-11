@@ -72,7 +72,7 @@ public final class LexemeUtils {
         }
 
         LexemeEntity valuesToken = extractValuesToken(query);
-        if(valuesToken != null) {
+        if (valuesToken != null) {
             return valuesToken;
         }
 
@@ -114,7 +114,7 @@ public final class LexemeUtils {
 
     private static LexemeEntity extractQueryOperationToken(String query) {
         for (String operation : QUERY_OPERATION_LEXEME_TYPE.keySet()) {
-            if (OperationUtils.queryStartWithOperation(query, operation)) {
+            if (OperationUtils.queryStartWithOperationIgnoreCase(query, operation)) {
                 return new LexemeEntity(QUERY_OPERATION_LEXEME_TYPE.get(operation), operation);
             }
         }
@@ -122,7 +122,7 @@ public final class LexemeUtils {
     }
 
     private static LexemeEntity extractValuesToken(String query) {
-        if (OperationUtils.queryStartWithOperation(query, "values")) {
+        if (OperationUtils.queryStartWithOperationIgnoreCase(query, "values")) {
             return new LexemeEntity(LexemeType.VALUES_TYPE, "values");
         }
         return null;

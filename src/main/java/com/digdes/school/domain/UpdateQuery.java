@@ -21,21 +21,27 @@ public class UpdateQuery implements Query {
         Deque<LexemeEntity> conditionLexemesInRPN = StackUtils.sortStationAlgorithm(conditionLexemes);
 
         if (!conditionLexemesInRPN.isEmpty()) {
-            rowPredicate = TableUtils.predicateOfMultipleConditions(conditionLexemesInRPN);
+            rowPredicate = TableUtils.predicateOfConditions(conditionLexemesInRPN);
         }
 
         List<Map<String, Object>> affectedRows = new ArrayList<>();
         table.stream()
                 .filter(rowPredicate)
                 .forEach(row -> {
+                    affectedRows.add(new HashMap<>(row));
                     row.putAll(updatedValues);
-                    affectedRows.add(row);
                 });
         return affectedRows;
     }
 
     private static Map<String, Object> lexemeProcessing(List<LexemeEntity> lexemes) throws ValidationException {
         Map<String, Object> updatedValues = new HashMap<>();
+        if (lexemes.size() < 5 || lexemes.size() % 4 != 1) {
+            throw new ValidationException("Incorrect query.");
+        }
+        if (lexemes.get(0).type() != LexemeType.UPDATE_QUERY_TYPE || lexemes.get(1).type() != LexemeType.VALUES_TYPE) {
+            throw new ValidationException("Incorrect query.");
+        }
 
         for (int idx = 1; idx < lexemes.size(); idx += 4) {
             LexemeEntity lexeme = lexemes.get(idx);
